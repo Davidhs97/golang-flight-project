@@ -464,7 +464,9 @@ This creates a more balanced comparison between:
 
 ## Why Nested Flight Model?
 
-The nested response structure is more extensible, maintainable, and closer to real-world production APIs.
+The flight response uses a nested structure to group related fields together (e.g. airline, departure, arrival, price).
+
+This makes the model more extensible, maintainable, and closer to real-world production APIs.
 
 ---
 
