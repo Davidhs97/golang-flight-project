@@ -18,7 +18,7 @@ func main() {
 	}
 
 	minPrice := float64(100000)
-	maxPrice := float64(50000000)
+	maxPrice := float64(500000)
 	// stops := 1
 
 	filter := models.SearchFilter{

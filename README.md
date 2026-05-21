@@ -379,7 +379,7 @@ The nested response structure is more extensible, maintainable, and closer to re
 
 ## Requirements
 
-* Go 1.22+
+* Go 1.24+
 
 ---
 
