@@ -70,7 +70,7 @@ type SearchRequest struct {
 | ReturnDate | Flight return date |
 | Passengers | Number of Passengers |
 | CabinClass | Cabin Class |
-|
+
 
 #### Example Usage 
 
@@ -115,7 +115,7 @@ type SearchFilter struct {
 | Stops | Number of stops |
 | Airlines | Filter by airline code or airline name |
 | MaxDuration | Maximum duration in minutes |
-|
+
 
 #### Example Usage 
 
@@ -166,7 +166,7 @@ Supported sort order:
 |---|---|
 | SortAsc | Ascending order |
 | SortDesc | Descending order |
-|
+
 
 #### Example Usage 
 
