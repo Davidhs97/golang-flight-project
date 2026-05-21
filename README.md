@@ -397,7 +397,6 @@ flight-project/
 │   ├── filter.go
 │   ├── flight.go
 │   ├── search.go
-│   ├── search_response.go
 │   └── sort.go
 │
 ├── providers/
@@ -489,7 +488,7 @@ The nested response structure is more extensible, maintainable, and closer to re
 ## 1. Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Davidhs97/golang-flight-project.git
 ```
 
 ---
