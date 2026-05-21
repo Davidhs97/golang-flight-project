@@ -45,6 +45,44 @@ Supports searching by:
 * Origin
 * Destination
 * Departure date
+* ReturnDate
+* Passengers
+* CabinClass
+
+### Search Request Structure
+
+```go
+type SearchRequest struct {
+   Origin string
+   Destination string
+   DepartureDate string
+   ReturnDate    string
+   Passengers    int   
+   CabinClass    string
+}
+```
+
+| Field | Description |
+|---|---|
+| Origin | Departure airport code |
+| Destination | Arrival airport code |
+| DepartureDate | Flight departure date |
+| ReturnDate | Flight return date |
+| Passengers | Number of Passengers |
+| CabinClass | Cabin Class |
+|
+
+#### Example Usage 
+
+```go
+request := models.SearchRequest{
+   Origin:        "CGK",
+   Destination:   "DPS",
+   DepartureDate: "2025-12-15",
+   Passengers:    1,
+   CabinClass:    "economy",
+}
+```
 
 ---
 
@@ -57,6 +95,41 @@ Supports filtering by:
 * Number of stops
 * Airlines
 * Duration
+
+### Filtering Options
+
+```go
+type SearchFilter struct {
+    MinPrice *float64
+    MaxPrice *float64
+    Stops *int
+    Airlines []string
+    MaxDuration *int
+}
+```
+
+| Filter | Description |
+|---|---|
+| MinPrice | Minimum flight price |
+| MaxPrice | Maximum flight price |
+| Stops | Number of stops |
+| Airlines | Filter by airline code or airline name |
+| MaxDuration | Maximum duration in minutes |
+|
+
+#### Example Usage 
+
+```go
+minPrice := float64(100000)
+maxPrice := float64(500000)
+stops := 1
+
+filter := models.SearchFilter{
+   MinPrice: &minPrice,
+   MaxPrice: &maxPrice,
+   Stops:    &stops,
+}
+```
 
 ---
 
@@ -74,6 +147,36 @@ Supports:
 
 * Ascending order
 * Descending order
+
+### Sorting Options
+
+Supported sorting options:
+
+| Sort Option | Description |
+|---|---|
+| SortByPrice | Sort by flight price |
+| SortByDuration | Sort by total duration |
+| SortByDepartureTime | Sort by departure time |
+| SortByArrivalTime | Sort by arrival time |
+| SortByBestValue | Sort by best-value score |
+
+Supported sort order:
+
+| Order | Description |
+|---|---|
+| SortAsc | Ascending order |
+| SortDesc | Descending order |
+|
+
+#### Example Usage 
+
+```go
+flights = services.SortFlights(
+   flights,
+   models.SortByBestValue,
+   models.SortAsc,
+)
+```
 
 ---
 
