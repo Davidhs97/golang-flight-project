@@ -16,11 +16,9 @@ func CalculateBestValueScores(
 	maxPrice := flights[0].Price.Amount
 	minPrice := flights[0].Price.Amount
 
-	maxDuration :=
-		flights[0].Duration.TotalMinutes
+	maxDuration := flights[0].Duration.TotalMinutes
 
-	minDuration :=
-		flights[0].Duration.TotalMinutes
+	minDuration := flights[0].Duration.TotalMinutes
 
 	maxStops := flights[0].Stops
 
